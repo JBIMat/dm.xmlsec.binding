@@ -1,4 +1,6 @@
-This is a fork of https://pypi.python.org/pypi/dm.xmlsec.binding/1.3.2
+This is a fork of https://pypi.python.org/pypi/dm.xmlsec.binding/1.3.2 with some modifications to help it compile on heroku.
+
+It has [this patch](https://gist.github.com/j00bar/4225461e95a788ad1990) applied, as described in [Josh's blog post](http://starboard.flowtheory.net/2015/07/adventures-with-heroku-python-saml-libxmlsec1-and-swig/#rating-22).
 
 ------------
 
