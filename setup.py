@@ -105,6 +105,7 @@ else:
   assert crypto_engine in ("openssl", "gnutls", "nss")
 #XMLSEC_CONFIG += " --crypto=" + crypto_engine
 xmlsec1_cflags = commands.getoutput("xmlsec1-config %s --cflags" % XMLSEC_CONFIG)
+print 'xmlsec1_cflags: %s'%(xmlsec1_cflags)
 print XMLSEC_CONFIG
 print environ
 if xmlsec1_cflags[:2] not in ["-I", "-D"]:
