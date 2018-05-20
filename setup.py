@@ -103,7 +103,7 @@ if crypto_engine is None:
     sys.exit("Error: cannot get XMLSec1 crypto engine")
 else:
   assert crypto_engine in ("openssl", "gnutls", "nss")
-XMLSEC_CONFIG += " --crypto=" + crypto_engine
+#XMLSEC_CONFIG += " --crypto=" + crypto_engine
 xmlsec1_cflags = commands.getoutput("xmlsec1-config %s --cflags" % XMLSEC_CONFIG)
 print XMLSEC_CONFIG
 print environ
