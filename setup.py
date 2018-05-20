@@ -112,7 +112,8 @@ print environ
 if xmlsec1_cflags[:2] not in ["-I", "-D"]:
     sys.exit("Error: cannot get XMLSec1 pre-processor and compiler flags; do you have the `libxmlsec1` development package installed?")
 
-xmlsec1_libs = commands.getoutput("xmlsec1-config %s --libs" % XMLSEC_CONFIG)
+#xmlsec1_libs = commands.getoutput("xmlsec1-config %s --libs" % XMLSEC_CONFIG)
+xmlsec1_libs = commands.getoutput("xmlsec1-config --libs")
 if xmlsec1_libs[:2] not in ["-l", "-L"]:
     sys.exit("Error : cannot get XMLSec1 linker flags; do you have the `libxmlsec1` development package installed?")
 
