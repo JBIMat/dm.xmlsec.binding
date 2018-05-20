@@ -106,6 +106,7 @@ else:
 #XMLSEC_CONFIG += " --crypto=" + crypto_engine
 #xmlsec1_cflags = commands.getoutput("xmlsec1-config %s --cflags" % XMLSEC_CONFIG)
 xmlsec1_cflags = commands.getoutput("xmlsec1-config --cflags")
+xmlsec1_cflags=xmlsec1_cflags.replace('/usr/','/app/.apt/usr/')
 print 'xmlsec1_cflags: %s'%(xmlsec1_cflags)
 print XMLSEC_CONFIG
 print environ
@@ -114,6 +115,8 @@ if xmlsec1_cflags[:2] not in ["-I", "-D"]:
 
 #xmlsec1_libs = commands.getoutput("xmlsec1-config %s --libs" % XMLSEC_CONFIG)
 xmlsec1_libs = commands.getoutput("xmlsec1-config --libs")
+xmlsec1_libs=xmlsec1_libs.replace('/usr/','/app/.apt/usr/')
+print 'xmlsec1_libs: %s'%(xmlsec1_libs)
 if xmlsec1_libs[:2] not in ["-l", "-L"]:
     sys.exit("Error : cannot get XMLSec1 linker flags; do you have the `libxmlsec1` development package installed?")
 
